@@ -21,40 +21,14 @@ const double PI = acos(-1.0);
 #define pb push_back
 #define all(v) (v).begin(), (v).end()
 bool testcase = true;
-
-
-
+    
 
 
 
 void brainrot() {
 
-    int n;
-    cin>>n;
-    string a,b;
-    cin>>a>>b;
-    int eva = 0,odda = 0,evb= 0,oddb = 0;
-    for (int i = 0; i < n; ++i)
-    {
-        if(a[i]=='1'){
-            if(i&1)++odda;
-            else ++eva;
-        }
-    }
- 
-     for (int i = 0; i < n; ++i)
-    {
-        if(b[i]=='1'){
-            if(i&1)++oddb;
-            else ++evb;
-        }
-    }
- 
-    if(eva==evb and odda== oddb){
-        cout<<"YES"<<endl;
-    }else{
-        cout<<"NO"<<endl;
-    }
+
+
 
 
 
@@ -68,5 +42,3 @@ int main() {
 
 return 0;    
 }
-
-
