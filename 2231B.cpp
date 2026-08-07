@@ -1,13 +1,13 @@
-#include <bits/stdc++.h>
+##include <bits/stdc++.h>
 using namespace std;
 
 #define optimize() ios_base::sync_with_stdio(false); cin.tie(nullptr);
-#define testcase int t; cin >> t; while(t--)
 
 #define ll long long
 #define ld long double
 
 using vll = vector<ll>;
+using vi = vector<int>;
 using mll = map<ll, ll>;
 
 
@@ -20,64 +20,43 @@ const double PI = acos(-1.0);
 #define ss second
 #define pb push_back
 #define all(v) (v).begin(), (v).end()
+bool testcase = true;
     
 
 
 
 void brainrot() {
 
-
-  /*  aaabccddeeff
-    aaa b cc ddd ee ff 5
-     x        x
-
-     aaaa b a bbbbb c dd
-
-     aa b 
-        x 
-*/
     int n;
     cin>>n;
-    string s;
-    cin>>s;
-    int ans = 1;
-    bool td = false;
-    for (int i = 1; i < n; ++i)
+    vll arr(n);
+    for(auto &i:arr)cin>>i;
+    ll mx = -1LL*INF;
+    for (int i = 0; i < n-1 ; ++i)
     {
-        if(s[i]!=s[i-1])++ans;
-
-    }
-    for (int i = 1; i < n-1; ++i)
-    {
-        if(s[i-1]==s[i+1] and s[i]!=s[i-1]){
-            ans-=2;
-            cout<<ans<<endl;
-            return;
-        }else if(s[i-1] != s[i] && s[i] != s[i+1] && s[i-1] != s[i+1]){
-          
-         td = true;
+        if(arr[i]>arr[i+1]){
+           mx = max(arr[i]-arr[i+1],mx);
         }
-
-
-
-
     }
-
-    // cout<<ans<<endl;
-    cout<<((td)?ans-1:ans)<<endl;
-
-
-
-
-
-
+    for (int i = 0; i < n-1; ++i)
+    {
+        if(arr[i]>arr[i+1])arr[i+1]+=mx;
+    }
+    if(is_sorted(all(arr))){
+        cout<<"YES"<<endl;
+    }else{
+        cout<<"NO"<<endl;
+    }
 
 
 }
 
 int main() {
     optimize();
-    testcase 
-    brainrot();
-    return 0;
+    int tc = 1;
+   if (testcase) cin >> tc;
+   while (tc--) brainrot();
+
+return 0;    
 }
+
