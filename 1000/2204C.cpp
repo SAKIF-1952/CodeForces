@@ -58,8 +58,3 @@ int main() {
 return 0;    
 }
 
-/*copy main.cpp 900\2245B.cpp
-git add 900\2245B.cpp
-git commit -m "2245B"
-git push*/
-
