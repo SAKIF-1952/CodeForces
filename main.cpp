@@ -25,7 +25,6 @@ bool testcase = false;
 
 
 
-
 void brainrot() {
 
      int n,m;
